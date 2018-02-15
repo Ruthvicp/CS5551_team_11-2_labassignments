@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Assignment 3</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/side_buttons.css">
+
+</head>
+
+<body class="body">
+<div class="btn-group">
+    <button id="log_out" class="button_v" onclick="window.location.href='index.html'">Logout</button>
+    <button id="about" class="button_v" onclick="window.location.href='about.html'">About</button>
+    <button id="contact" class="button_v" onclick="window.location.href='contact.html'">Contact Us</button>
+</div>
+
+<div class="form">
+    <center>
+        <h1 align="absolute">Enter text to find the sentiment quotient</h1>
+        <div class="field-wrap">
+            <input type="text" id="txt_Text" placeholder="How are you today ?"/>
+        </div>
+
+        <button id="btn_getSentiment" class="button" onclick="getSentiment()">Get Sentiment Analysis</button>
+        <button id="btn_clear" class="button" onclick="clearAll()">Reset</button>
+
+    </center>
+    <br/><br/>
+    <div id="div_sentiment">
+        <textarea rows="3%" id="sentiAnal" cols="80%" readonly></textarea>
+    </div>
+    <br/><br/>
+    <center>
+        <div id="id01">
+            <h3 style="color:#1ab188">Text to Speech</h3>
+        </div>
+    </center>
+    <script>
+
+        function clearAll() {
+            document.getElementById("txt_Text").value = "";
+            document.getElementById("sentiAnal").value = "";
+        }
+
+        function getSentiment() {
+            var txt = document.getElementById("txt_Text").value;
+            var xmlhttp = new XMLHttpRequest();
+
+            var url = "http://gateway-a.watsonplatform.net/calls/text/TextGetTextSentiment?apikey=d0e7bf68cdda677938e6c186eaf2b755ef737cd8&outputMode=json&text=" + txt;
+
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    var myArr = JSON.parse(this.responseText);
+                    myFunction(myArr);
+                }
+            };
+            xmlhttp.open("GET", url, true);
+            xmlhttp.send();
+
+            function myFunction(arr) {
+                var out = "";
+                var out1 = "";
+                out = "Your Sentiment Score is " + arr.docSentiment.score + "\n"
+                out += "Type of emotion is " + arr.docSentiment.type + "\n"
+                out += "Language of the text is " + arr.language
+                out1 = "Your%20sentiment%20score%20is%20" + arr.docSentiment.score + "%20And%20your%20Type" + "%20of%20emotion%20is%20" + arr.docSentiment.type + "%20And%20the%20input%20language%20is%20" + arr.language
+                document.getElementById("sentiAnal").value = out;
+                var url = 'http://api.voicerss.org/?key=6592a8e49d9944feb2d7b38c1c4c3b93&hl=en-us&src=' + out1;
+                out = '<audio src=' + url + ' controls> Your browser does not support the audio element. </audio>'
+                document.getElementById("id01").innerHTML = out;
+            }
+
+        }
+    </script>
+    <!-- In production use:
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+    -->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+    <script src="app.js"></script>-->
+
+</div>
+
+</body>
+</html>

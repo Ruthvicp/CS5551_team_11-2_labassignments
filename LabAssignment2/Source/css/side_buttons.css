@@ -1,0 +1,34 @@
+
+.btn-group {
+    background-color: rgba(19, 35, 47, 0.9); /* Green background */
+    border: #179b77; /* Green border */
+    color: white; /* White text */
+    padding: 10px 15px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    width: 15%; /* Set a width if needed */
+    height: 500px;
+    display: block; /* Make the buttons appear below each other */
+    margin:15px 0;
+    position: absolute;
+    left: 35px;
+}
+
+.button_v {
+    background-color: #1ab188;
+    width:100%;
+    height:120px;
+    margin:15px 0;
+    color: white;
+    font-weight: 300;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+.btn-group button:not(:last-child) {
+    border-bottom: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.button_v:hover {
+    background-color: #179b77;
+}

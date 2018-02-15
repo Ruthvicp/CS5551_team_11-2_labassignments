@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact Page</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Courgette|Pacifico:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/side_buttons.css">
+
+</head>
+<body>
+
+<div class="btn-group">
+    <button id="log_out" class="button_v" onclick="window.location.href='index.html'">Logout</button>
+    <button id="home_id" class="button_v" onclick="window.location.href='home.html'">Home</button>
+    <button id="about" class="button_v" onclick="window.location.href='about.html'">About Us</button>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 m-auto">
+            <div class="contact-form">
+                <h1>Contact Us</h1>
+                <form action="/examples/actions/confirmation.php" method="post">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="inputName">Name</label>
+                                <input type="text" class="form-control" id="inputName" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="inputEmail">Email</label>
+                                <input type="email" class="form-control" id="inputEmail" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputMessage">Message</label>
+                        <textarea class="form-control" rows="2%" cols="80%" id="inputMessage" rows="5"
+                                  required></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane"></i> Send</button>
+                    </div>
+                    <div class="contact-form">
+                        <h1>Contact Details</h1>
+                        <h4>Ruthvic punyamurtula, mail : rpmgz@mail.umkc.edu </br>
+                            Navya Ramya Sirisha, mail : np7yd@mail.umkc.edu </br>
+                            ASE Team 11-2</h4>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
