@@ -1,0 +1,26 @@
+<ion-view title="Home">
+    <ion-pane>
+        <ion-content ng-controller="myCtrl" style="background: url(../img/image.jpg);background-size:cover;">
+            </br>
+            <h2 align="center"> Welcome user, click the below button to get your current coordinates.  </h2>
+            </br>
+            <button class="button button-block button-positive" ng-click="toggle()">
+                Get your coordinates
+            </button>
+            <h3 align="center"> Your GPS coordinates are : </h3   >
+            <div class="card">
+                <div class="item item-text-wrap">
+                    Latitude : 39.027832 <span ng-bind="lat"></span>
+                </div>
+            </div>
+            </br>
+            </br>
+            <div class="card">
+                <div class="item item-text-wrap">
+                    Longitude : -94.575714 <span ng-bind="long"></span>
+                </div>
+            </div>
+            <a class="button button-block button-positive" href="#/tab/restaurants">Get near by restaurants</a>
+        </ion-content>
+    </ion-pane>
+</ion-view>

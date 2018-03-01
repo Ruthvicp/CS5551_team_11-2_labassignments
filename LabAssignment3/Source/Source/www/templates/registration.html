@@ -1,0 +1,26 @@
+<form ua-signup >
+    <ion-view title="Sign Up" style="background: url(img/image.jpg);background-size:cover;">
+        <ion-content>
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <span class="input-label">Name</span>
+                    <input type="text" name="first_name">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Email</span>
+                    <input type="text" name="login" ua-is-email>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Password</span>
+                    <input type="password" name="password">
+                </label>
+            </div>
+            <div class="padding">
+                    <a class="button button-block button-positive" href="#/geolocation">Create Account</a>
+            </div>
+        </ion-content>
+    </ion-view>
+    <div class="bar bar-footer bar-assertive" ng-show="error">
+        <div class="title">{{ error.message }}</div>
+    </div>
+</form>
