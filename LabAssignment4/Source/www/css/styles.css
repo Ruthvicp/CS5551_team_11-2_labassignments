@@ -1,0 +1,41 @@
+.title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.filter {
+  margin-bottom: 10px;
+}
+
+.locations-list {
+  font-size: 24px;
+}
+
+.filter input,
+.filter span {
+  font-size: 24px;
+  height: 100%;
+}
+
+button.filterLocations {
+  margin: 20px 0;
+}
+
+.filterInput.in,
+.filterInput.collapsing {
+    display: block!important;
+}
+
+@media screen and (min-width:992px) {
+  .filterInput {
+    display: block !important;
+  }
+}
+
+@media screen and (max-width:1024px) {
+  .filter input,
+  .filter span,
+  .locations-list {
+    font-size: 14px;
+  }
+}

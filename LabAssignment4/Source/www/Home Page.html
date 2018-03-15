@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pictures from Bay Area Cities</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/spinner.css">
+</head>
+<body>
+<div class="container-fluid">
+  <div class="row">
+    <section class="col-md-3">
+      <h1 class="title">Pictures from Bay Area Cities</h1>
+      <button type="button" class="filterLocations btn btn-default visible-sm visible-xs" data-toggle="collapse" data-target="#filterInput">Filter Locations</button>
+    </section>
+  </div>
+  <div class="row">
+    <section class="col-md-3 filterInput hidden-sm hidden-xs" id="filterInput">
+      <div class="input-group filter">
+        <input type="text" class="form-control" placeholder="Bay Area Location" data-bind="value: query, valueUpdate: 'keyup'">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-filter"></span>Filter</span>
+      </div>
+      <div class="list-group locations-list" data-bind="foreach: filteredLocations">
+        <button type="button" class="list-group-item location" data-bind="text: city, click: $parent.clickLocation"></button>
+      </div>
+    </section>
+    <section class="col-md-9 map">
+    </section>
+  </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/knockout/knockout-3.3.0.js"></script>
+<script src="js/app2.js"></script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyAw8ulGVGD_v0LPEpd0o0fv33g07XoD97M&callback=initMap" onerror="loadMapError()">
+</script>
+</body>
+</html>

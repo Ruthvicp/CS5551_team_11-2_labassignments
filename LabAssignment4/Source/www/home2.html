@@ -1,0 +1,42 @@
+<ion-view view-title="app">
+  <ion-content class= "padding" ng-app="AnalysisTwoController">
+    
+      <label class="item item-input">
+  <span class="input-label">Enter Text</span>
+  <input id="textapi" type="text">
+</label>  
+      
+       <button class="button button-full button-balanced"   ng-click="classify()">
+  Get Classification
+</button>
+       
+        <ul>
+      <li ng-repeat="name in result track by $index">
+                      {{name}} 
+          </li>
+      
+      </ul>
+        
+        <button class="button button-full button-balanced"   ng-click="message()">
+See a chart
+</button>
+        
+       <div id="piechart" style="left:0px; width: 500px; height: 500px;"></div>
+        
+        
+        
+<!--
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
+        <img ng-src="{{chat.face}}">
+        <h2>{{chat.name}}</h2>
+        <p>{{chat.lastText}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <ion-option-button class="button-assertive" ng-click="remove(chat)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+-->
+    
+  </ion-content>
+</ion-view>
